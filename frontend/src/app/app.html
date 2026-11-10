@@ -1,0 +1,56 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <a class="brand" routerLink="/dashboard" aria-label="BinSight dashboard">
+      <img class="brand-mark" src="binsight-mark.png" alt="" width="130" height="130">
+      <span class="brand-text"><strong>Bin<span>Sight</span></strong><small>Amchit Municipality</small></span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <div class="nav-label">Monitoring</div>
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg><span>Dashboard</span>
+      </a>
+      <a routerLink="/bins" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg><span>Bins</span>
+      </a>
+      <a routerLink="/map" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Map</span>
+      </a>
+
+      <div class="nav-label">Operations</div>
+      <a routerLink="/cameras" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg><span>Cameras</span>
+      </a>
+      <a routerLink="/detection-events" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Camera alerts</span>
+      </a>
+      <a routerLink="/collections" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><path d="M2 7h11v9H2zM13 10h4l4 3v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span>Collections</span>
+      </a>
+
+      <div class="nav-label">System</div>
+      <a routerLink="/settings" routerLinkActive="active">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <span class="sidebar-foot-dot"></span>
+      <span><strong>System online</strong><small>Sensors &amp; cameras connected</small></span>
+    </div>
+  </aside>
+
+  <div class="main-column">
+    <header class="topbar">
+      <a class="mobile-brand" routerLink="/dashboard" aria-label="BinSight dashboard">
+        <img src="binsight-mark.png" alt="" width="130" height="130"><strong>Bin<span>Sight</span></strong>
+      </a>
+      <span class="breadcrumb">BinSight <span class="topbar-separator">/</span> <strong>{{ page() }}</strong></span>
+      <span class="topbar-date">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        {{ today | date:'EEE, d MMM yyyy' }}
+      </span>
+    </header>
+    <main class="page-content"><router-outlet /></main>
+  </div>
+</div>

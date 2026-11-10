@@ -1,0 +1,32 @@
+{
+  "name": "binsight-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "check:backend": "npm run build && node dist/check-backend.js",
+    "check:ingestion": "npm run build && node dist/check-ingestion.js",
+    "test:sms": "tsx --test src/services/sms-parser.test.ts",
+    "test:collections": "tsx --test src/services/collection-analysis.test.ts",
+    "test:bins": "tsx --test src/services/bin-tilt.test.ts",
+    "test:thingspeak": "tsx --test src/services/thingspeak.test.ts",
+    "demo:reading": "npm run build && node dist/demo-reading.js",
+    "demo:collections": "npm run build && node dist/demo-collections.js",
+    "demo:fallen": "npm run build && node dist/demo-reading.js --fallen"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.10.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
